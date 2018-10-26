@@ -11,7 +11,6 @@ body {
   height: 100vh;
   background-color: #160133;
   color: white;
-
 }
 
 a {
@@ -19,6 +18,12 @@ a {
   color: #7afa4f;
 }
 
+button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+}
 
 // 메인 게임 페이지
 
@@ -168,8 +173,11 @@ a {
   margin: 8px 0 7px 0;
 }
 .reset-btn {
+  background: linear-gradient(#eee, #ddd);
   font-size: 0.8rem;
   line-height: 1;
+  padding: 5px 10px;
+  border-radius: 5px;
 }
 
 // 푸터
@@ -241,6 +249,7 @@ a {
 // 시작하기 버튼
 
 .start-btn {
+  background: linear-gradient(#eee, #ddd);
   font-size: 0.8rem;
   font-weight: 700;
   line-height: 1;
@@ -254,7 +263,6 @@ a {
 .start-act {
   display: none;
 }
-
 
 // 게임 종료시 화면
 
@@ -289,6 +297,7 @@ a {
 
 // 재시작 버튼
 .restart-btn {
+  background: linear-gradient(#eee, #ddd);
   font-size: 0.8rem;
   font-weight: 700;
   line-height: 1;
