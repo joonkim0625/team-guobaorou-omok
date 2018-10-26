@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>팀 꿔바로우 해커톤 - 오목</title>
+
+  <link rel="stylesheet" href="./index.scss">
+</head>
+
+<body>
+
+  <!-- 메인 게임 페이지 -->
+  <div class="container">
+
+    <!-- 헤더 -->
+    <header class="header">
+      <h1>guobaorouui-MacBook-Pro: team-hackathon guobaorou$ omok_</h1>
+    </header>
+
+    <!-- 게임 영역 -->
+    <div class="main">
+
+      <!-- 사용자 이름 표시 영역 -->
+      <section class="players">
+        <p class="player1">
+          <span class="player1-stone">●</span>
+          <span class="player1-name"></span>
+        </p>
+        vs
+        <p class="player2">
+          <span class="player2-stone">●</span>
+          <span class="player2-name"></span>
+        </p>
+
+      </section>
+
+      <!-- 바둑판 영역-->
+      <main class="board-container">
+
+        <!-- 바둑판 -->
+        <div class="board">
+          <div class="row">
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+            <div class="col">
+              <div class="col-grid"></div>
+            </div>
+          </div>
+
+        </div>
+        <!-- 리셋 버튼 -->
+        <div class="reset-container">
+          <button class="reset-btn">reset</button>
+        </div>
+
+      </main>
+
+    </div>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+      <p class="github-info">
+        &gt; github <a href="https://github.com/joonkim0625" target="_blank">@joonkim0625</a> <a href="https://github.com/minji2687"
+          target="_blank">@minji2687</a>
+        <a href="https://github.com/sena-a" target="_blank">@sena-a</a>
+      </p>
+    </footer>
+
+  </div>
+
+  <!-- 게임 시작 페이지 -->
+  <div class="start-page">
+
+    <h2 class="game-title">[OMOK] : Programmed By Team Guobaorou</h2>
+
+    <section class="start-main">
+
+      <!-- 사용자 이름 입력 창 -->
+      <form class="start-players">
+        <input type="text" name="player1" placeholder="Player1" maxlength="10" autocomplete="off">
+
+        <span>vs</span>
+
+        <input type="text" name="player2" placeholder="Player2" maxlength="10" autocomplete="off">
+      </form>
+
+      <!-- 시작 버튼 -->
+      <button class="start-btn">
+        start
+      </button>
+
+    </section>
+  </div>
+
+  <!-- 게임 종료시 화면 -->
+  <div class="winner-page">
+
+    <section class="winner-main">
+
+      <!-- 승리 문구 -->
+      <div class="winner-text">
+        winner ->
+        <span class="winner"></span>
+        <p>press restart button</p>
+      </div>
+
+      <!-- 재시작 버튼 -->
+      <button class="restart-btn">
+        restart
+      </button>
+
+    </section>
+  </div>
+
+  <script src="./index.js"></script>
+</body>
+
+</html>
