@@ -12,9 +12,6 @@ const player2El = document.querySelector('.player2-name')
 const indexArr = []
 const previousArr = []
 
-// autofocus
-
-const autoFocusEl = document.querySelector('input')
 
 // 페이지 리프레시
 
