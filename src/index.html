@@ -25,7 +25,7 @@
     <div class="main">
 
       <!-- 사용자 이름 표시 영역 -->
-      <section class="players">
+      <div class="players">
         <p class="player1">
           <span class="player1-stone">●</span>
           <span class="player1-name"></span>
@@ -36,7 +36,7 @@
           <span class="player2-name"></span>
         </p>
 
-      </section>
+      </div>
 
       <!-- 바둑판 영역-->
       <main class="board-container">
@@ -775,7 +775,7 @@
 
     <h2 class="game-title">[OMOK] : Programmed By Team Guobaorou</h2>
 
-    <section class="start-main">
+    <div class="start-main">
 
       <!-- 사용자 이름 입력 창 -->
       <form class="start-players">
@@ -794,7 +794,7 @@
 
 
 
-    </section>
+    </div>
   </div>
 
   <!-- 게임 종료시 화면 -->
@@ -811,7 +811,8 @@
 
       <!-- 재시작 버튼 -->
 
-      <form class="restart-btn-form">
+      <form class="restart-btn-form" id="form">
+
         <button class="restart-btn">
           restart
         </button>

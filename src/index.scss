@@ -82,9 +82,9 @@ button {
   cursor: pointer;
 }
 
-.col:hover {
-  background-color: #4b6043;
-}
+// .col:hover {
+//   background-color: #4b6043;
+// }
 
 .col::before {
   display: block;
@@ -154,6 +154,18 @@ button {
   left: 10%;
   border-radius: 50%;
 }
+
+// 플레이어의 턴마다 호버되는 색값이 달라진다
+
+.col.player1:hover {
+  background-color: #00af4388;
+}
+
+.col.player2:hover {
+  background-color: #3054f188;
+}
+
+
 
 // 흑돌
 .col.black::after {
@@ -333,3 +345,4 @@ button {
 .winner2-act .winner-text {
   color: #68cfff;
 }
+

@@ -1,33 +1,48 @@
 // 공통 변수
-const startPage = document.querySelector('.start-page')
+const startPage = document.querySelector(".start-page");
 
-const winnerPage = document.querySelector('.winner-page')
+const winnerPage = document.querySelector(".winner-page");
 
-const startPlayersEl = document.querySelector('.start-players')
+const startPlayersEl = document.querySelector(".start-players");
 
-const player1El = document.querySelector('.player1-name')
+const player1El = document.querySelector(".player1-name");
 
-const player2El = document.querySelector('.player2-name')
+const player2El = document.querySelector(".player2-name");
 
+
+// 실험용
+// 전역 스코프로 지정해주어서 모듈 스코프 밖에서 확인을 할 수 있도록 하던지, 스트링기파이를 사용해서 하는 것이 좋다.
 const indexArr = []
+window.indexArr = indexArr;
 const previousArr = []
 
 
-// 페이지 리프레시
 
-// function refreshPage() {
-//   window.location.reload();
-// }
+// submitForm(e)는 restart 버튼이 엔터키로 작동될 수 있도록 해주는 함수
+const formEl = document.getElementById('form')
+
+function submitForm(e) {
+  if (e.keyCode === 13)
+  {
+    formEl.submit()
+  }
+}
+
+
 
 // 사용자 이름 입력 값 함수
-function player1(name){
-  if(name === ''){return 'Player1';}else{
+function player1(name) {
+  if (name === "") {
+    return "Player1";
+  } else {
     return name;
   }
 }
 
-function player2(name){
-  if(name === ''){return 'Player2';}else{
+function player2(name) {
+  if (name === "") {
+    return "Player2";
+  } else {
     return name;
   }
 }
@@ -36,7 +51,7 @@ function player2(name){
 
 // 현재 바둑돌 색깔 - 흑돌일 시 1, 백돌일 시 2
 
-let currentStone = 1
+let currentStone = 1;
 
 // 게임판 초기값
 let boardState = [
@@ -59,41 +74,52 @@ let boardState = [
 
 // 게임 상태
 function drawBoard() {
-
   document.querySelectorAll(".row").forEach((rowEl, rowIndex) => {
     rowEl.querySelectorAll(".col").forEach((colEl, colIndex) => {
+      if (boardState[rowIndex][colIndex] === 0 && currentStone === 1) {
+        colEl.classList.add("player1");
+        colEl.classList.remove('player2')
+      } else if (boardState[rowIndex][colIndex] === 0 && currentStone === 2) {
+        colEl.classList.add("player2");
+        colEl.classList.remove('player1')
+      }
+
       if (boardState[rowIndex][colIndex] === 1) {
         colEl.classList.add("black");
-
       } else {
         colEl.classList.remove("black");
       }
       if (boardState[rowIndex][colIndex] === 2) {
         colEl.classList.add("white");
-
       } else {
         colEl.classList.remove("white");
       }
     });
   });
 
-// 승리 시 화면 변화
+  // 승리 시 화면 변화
   if (omok(boardState) === 1) {
-    document.querySelector('.winner').textContent = player1(startPlayersEl.player1.value)
-    document.querySelector('.winner-page').classList.add('winner1-act')
+    // 게임 종료시에 폼 영역에 엔터키가 활성화되는 이벤트리스너를 부착
+    document.addEventListener('keypress', function () { submitForm(event) }, false);
 
-  } else if(omok(boardState) === 2) {
-    document.querySelector('.winner').textContent = player2(startPlayersEl.player2.value)
-    document.querySelector('.winner-page').classList.add('winner2-act')
+    document.querySelector(".winner").textContent = player1(
+      startPlayersEl.player1.value
+    );
+    document.querySelector(".winner-page").classList.add("winner1-act");
+  } else if (omok(boardState) === 2) {
+     // 게임 종료시에 폼 영역에 엔터키가 활성화되는 이벤트리스너를 부착
+    document.addEventListener('keypress', function () { submitForm(event) }, false);
 
+    document.querySelector(".winner").textContent = player2(
+      startPlayersEl.player2.value
+    );
+    document.querySelector(".winner-page").classList.add("winner2-act");
   }
 }
-
 
 // 승리 체크 로직
 
 function omok(arr) {
-
   // 가로줄
   for (let i = 0; i < 15; i++) {
     let currentPlayer;
@@ -240,58 +266,60 @@ document.querySelectorAll(".row").forEach((rowEl, rowIndex) => {
   rowEl.querySelectorAll(".col").forEach((colEl, colIndex) => {
     colEl.addEventListener("click", e => {
 
-        if (!omok(boardState) && boardState[rowIndex][colIndex] === 0) {
+      if (!omok(boardState) && boardState[rowIndex][colIndex] === 0) {
+        if (
+          boardState[rowIndex][colIndex] === 1 ||
+          boardState[rowIndex][colIndex] === 2
+        ) {
+          return;
+        }
 
-
-          if (boardState[rowIndex][colIndex] === 1 || boardState[rowIndex][colIndex] === 2) {
-            return
-          }
-
-          if (!omok(boardState) && currentStone === 1) {
-            boardState[rowIndex][colIndex] = 1;
-            currentStone = 2
-            indexArr.push([rowIndex, colIndex])
-
-
-            drawBoard();
-          } else if (!omok(boardState) && currentStone === 2) {
-            boardState[rowIndex][colIndex] = 2;
-            currentStone = 1;
-            indexArr.push([rowIndex, colIndex]);
-
-            drawBoard();
-          }
-
-          // 현재 턴 표시
-          if (currentStone === 1){
-            player1El.classList.add('current-turn')
-            player2El.classList.remove('current-turn')
-          } else if (currentStone === 2){
-            player2El.classList.add('current-turn')
-            player1El.classList.remove('current-turn')
-          }
+        if (!omok(boardState) && currentStone === 1) {
+          boardState[rowIndex][colIndex] = 1;
+          currentStone = 2;
+          indexArr.push([rowIndex, colIndex]);
+          console.log(indexArr)
 
           drawBoard();
+        } else if (!omok(boardState) && currentStone === 2) {
+          boardState[rowIndex][colIndex] = 2;
+          currentStone = 1;
+          indexArr.push([rowIndex, colIndex]);
+          console.log(indexArr)
+          drawBoard();
         }
+
+        // 현재 턴 표시
+        if (currentStone === 1) {
+          player1El.classList.add("current-turn");
+          player2El.classList.remove("current-turn");
+        } else if (currentStone === 2) {
+          player2El.classList.add("current-turn");
+          player1El.classList.remove("current-turn");
+        }
+
+        drawBoard();
+      }
     });
   });
 });
 
 // 시작하기 버튼 이벤트 리스너
-document.querySelector('.start-btn').addEventListener('click', e=> {
-  e.preventDefault()
-  startPage.classList.add('start-act')
-  player1El.classList.add('current-turn')
-  player2El.classList.remove('current-turn')
-  player1El.textContent = player1(startPlayersEl.player1.value)
-  player2El.textContent = player2(startPlayersEl.player2.value)
+document.querySelector(".start-btn").addEventListener("click", e => {
+  e.preventDefault();
+  startPage.classList.add("start-act");
+  player1El.classList.add("current-turn");
+  player2El.classList.remove("current-turn");
+  player1El.textContent = player1(startPlayersEl.player1.value);
+  player2El.textContent = player2(startPlayersEl.player2.value);
+});
 
+// 게임 종료 시 재시작 버튼 이벤트리스너 - 클릭
 
-})
-
-
-// 게임 종료 시 재시작 버튼 이벤트리스너
-document.querySelector('.restart-btn').addEventListener('click', e=> {
+document.querySelector(".restart-btn").addEventListener("click", e => {
+  document.removeEventListener("keypress", function() {
+      submitForm(event);
+    }, false);
 
   boardState = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -316,23 +344,22 @@ document.querySelector('.restart-btn').addEventListener('click', e=> {
   document.querySelector(".player2").classList.remove("turn");
   drawBoard();
 
-  winnerPage.classList.remove('winner1-act')
-  winnerPage.classList.remove('winner2-act')
+  winnerPage.classList.remove("winner1-act");
+  winnerPage.classList.remove("winner2-act");
 
-  startPlayersEl.player1.value = ''
-  startPlayersEl.player2.value = ''
+  startPlayersEl.player1.value = "";
+  startPlayersEl.player2.value = "";
 
-  startPage.classList.remove('start-act');
+  startPage.classList.remove("start-act");
+
+});
 
 
-
-})
 
 
 // 리셋 버튼 이벤트리스너
 
 document.querySelector(".reset-btn").addEventListener("click", e => {
-
   boardState = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -352,21 +379,16 @@ document.querySelector(".reset-btn").addEventListener("click", e => {
   ];
   currentStone = 1;
   // 플레이어 턴의 색을 플레이어 1에게로 지정
-  player1El.classList.add('current-turn')
-  player2El.classList.remove('current-turn')
-
+  player1El.classList.add("current-turn");
+  player2El.classList.remove("current-turn");
 
   drawBoard();
 
-  startPage.classList.add('start-act');
+  startPage.classList.add("start-act");
   // 게임이 초기화 될 때 플레이어 1의 턴으로 되돌아간다.
-
 });
 
-
 // 실험용
-
-
 
 // 기본 화면
 drawBoard();
