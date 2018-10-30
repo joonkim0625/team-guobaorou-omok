@@ -192,6 +192,15 @@ button {
   border-radius: 5px;
 }
 
+.undo-btn {
+  background: linear-gradient(#eee, #ddd);
+  font-size: 0.8rem;
+  line-height: 1;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
 // 푸터
 .footer {
   height: 10vh;
